@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
+*{
+    padding:0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size:10px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a{
+    text-decoration: none;
+}
+
+img{
+    width: 100%;
+    height: 100%
+}
+
+p{
+    text-align: left;
+    font-size: 1.2rem;
+    line-height: 1.9rem;
+}
+
+
+/* Hero Section */
+#hero{
+    background-size: cover;
+    background-position: top center;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(./img/code.jpg);
+    position: relative;
+    
+    min-height: 100vh;
+    display: flex;
+    width: 100%;
+    /* filter: brightness(0.2); */
+}
+/* #hero::after{
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black;
+    opacity: 0.5;
+    z-index: 2;
+} */
+#hero h1{
+    display:block;
+    width:fit-content;
+    font-size: 4rem;
+    position: relative;
+    font-weight: bolder;
+    z-index: 2;
+    animation: text_reveal 1s ease-in forwards;
+    color:transparent;
+    padding:2px 5px;
+}
+#hero h1 span{
+    position: absolute;
+    top:0;
+    left: 0;
+    /* width: 100%; */
+    width:0%;
+    height: 100%;
+    background-color: crimson;
+    animation: h1span_reveal 3s ease-in;
+    animation-fill-mode: forwards;
+    /* transition-property: background-color; */
+    z-index: -1;
+}
+
+#hero .cta{
+    display:inline-block;
+    padding: 10px 30px;
+    color: white;
+    background-color: transparent;
+    border: 2px solid crimson;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+    margin-top: 30px;
+    transition: .3s ease;
+    transition-property: background-color, color;
+}
+
+#hero .cta:hover{
+    color:white;
+    background-color: crimson;
+}
+
+@keyframes text_reveal{
+    to{
+        color:white;
+    }
+    from{
+        color:transparent;
+
+    }
+}
+
+@keyframes h1span_reveal{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width:100%
+    }
+}
+
+#hero .hero{
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+    justify-content: flex-start;
+}
+
+/* End Hero Section */
+
+/* Start Services Section */
+#services .service{
+    flex-direction: column;
+    padding: 50px 0px;
+    /* text-align: center;
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 100px 0; */
+}
+
+.service-top{
+    padding: 10px 5%;
+}
+
+.service-top h1{
+    font-size: 4rem;
+    font-weight: 300;
+    color: black;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.service-top p{
+    font-size: 1.4rem;
+    margin-top: 5px;
+    line-height: 2.5rem;
+    font-weight: 300;
+    color: black;
+    text-align: center;
+}
+
+.service-bottom{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service-item{
+    flex-basis: 80%;
+    display: flex;
+    flex-direction: column;
+    /* align-items: flex-start; */
+    padding: 30px;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 10px 5%;
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('./img/laptop.jpg');
+    background-size: cover;
+    position: relative;
+}
+
+#services{
+    color:white;
+}
+
+.service-bottom .icon img{
+    height: 50px;
+    width: 50px;
+    margin-bottom: 20px;
+}
+
+.service-bottom h2{
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    font-size: 3rem;
+}
+
+/* End Services Section */
+
+/* Start Project Section */
+
+@media(max-width:768px){
+    .projects{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.projects{
+    /* max-width: 1200px;
+    margin: 0 auto; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+}
+
+.project-item{
+    /* padding: 10px 5%; */
+    /* flex-basis: 30%; */
+    flex-basis: 30%;
+    height: 100%;
+}
+
+.project-top{
+    background-color: cadetblue;
+}
+
+.project-top h2{
+    font-size: 2.5rem;
+    letter-spacing: 0.05rem;
+    padding-bottom: 5px;
+}
+
+.project-top h3{
+    font-size: 1.5rem;
+    padding-bottom: 5px;
+}
+
+.project-top p{
+    font-size: 1.2rem;
+    padding-bottom: 5px;
+}
+
+
+
+/* End Project Section */
